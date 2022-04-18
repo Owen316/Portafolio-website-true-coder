@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 /* ----------------Website Theme---------------- */
 :root{
     --hue-1: 257;
@@ -29,4 +31,93 @@
 body{
     overflow-x: hidden;
     background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Para cambiar el estilo al seleccionar el texto con el ratón */
+::selection{
+    background-color: hsla(var(--hue-1), 100%, 60%, 0.9);
+    color: #fff;
+}
+
+a{
+    /* Quita el estilo normal de un enlace */
+    text-decoration: none; 
+}
+
+ul{
+    /* Quita el estilo predeterminado de una lista */
+    list-style: none; 
+}
+/* ----------------Reusable CSS Code---------------- */
+
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 75rem;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
+.logo{
+    margin-right: 1.5rem; 
+    font-family: "Abril Fatface", cursive;
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    letter-spacing: 1px; /*Propiedad para establecer espacio entre las letras*/
+ }
+ 
+ .logo span {
+     color: var(--main-color-1);
+ }
+
+/* ----------------Navbar Styling---------------- */
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+nav.container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+
+header .logo{
+    height: 120px;
+    line-height: 120px;
+}
+
+.links {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links ul{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-link{
+    display: inline-block;
+    margin: 0 1rem;
+    text-transform: uppercase; /*Propiedad para poner el texto en matuscula o minuscula*/
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    color: var(--text-color);
+    font-weight: 500;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    color: var(--heading-text);
 }
