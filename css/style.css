@@ -65,6 +65,7 @@ ul{
     font-size: 1.5rem;
     color: var(--heading-color);
     letter-spacing: 1px; /*Propiedad para establecer espacio entre las letras*/
+    transition: 0.3s;
  }
  
  .logo span {
@@ -79,6 +80,13 @@ header{
     left: 0;
     width: 100%;
     z-index: 10;
+    transition: 0.3s;
+}
+
+header.scrolled {
+    background-color: var(--bg-color-transparent);
+    box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
 }
 
 nav.container{
@@ -94,6 +102,11 @@ header .logo{
     line-height: 120px;
 }
 
+header.scrolled .logo{
+    height: 80px;
+    line-height: 80px;
+}
+
 .links {
     flex: 1;
     display: flex;
@@ -107,6 +120,7 @@ header .logo{
 }
 
 .nav-link{
+    position: relative;
     display: inline-block;
     margin: 0 1rem;
     text-transform: uppercase; /*Propiedad para poner el texto en matuscula o minuscula*/
@@ -118,6 +132,44 @@ header .logo{
     transition: 0.3s;
 }
 
+.nav-link::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--main-color-1);
+    bottom: 0;
+    left: -5px;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.3s;
+}
+
 .nav-link:hover{
-    color: var(--heading-text);
+    color: var(--heading-color);
+}
+
+.nav-link:hover::after{
+    width: 100%;
+    opacity: 0.2;
+}
+
+.toggle-btn{
+    color: var(--heading-color);
+    min-width: 40px;
+    height: 40px;
+    background-color: var(--bg-color-2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px 0px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.toggle-btn:hover {
+    filter: brightness(97%);
 }
