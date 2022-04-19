@@ -173,3 +173,19 @@ header.scrolled .logo{
 .toggle-btn:hover {
     filter: brightness(97%);
 }
+
+/* ---------------- Showcase area Styling ---------------- */
+
+.showcase-area{
+    padding: 120px 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: red;
+}
+
+.showcase-area .container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: calc(100vh -120px);
+    max-height: 600px;
+}
